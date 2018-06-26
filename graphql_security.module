@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Contains any hook implementation functions related to Drupal's security
+ */
+
+
+/**
+ * Implements hook_graphql_fields_alter().
+ *
+ * Hide entityOwner from GraphQL results
+ */
+function graphql_security_graphql_fields_alter(&$fields) {
+    // use the following line to debug the fields. The quickest way is to execute it via clear cache
+    // \Drupal::service('logger.factory')->get('php')->error('<pre>' . var_dump($fields['entity_owner']) . '</pre>');
+
+    // Remove EntityOwner object reference from results. This was used to retrieve content author name
+    unset($fields['entity_owner']);
+}

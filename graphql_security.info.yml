@@ -1,0 +1,5 @@
+name: Graphql Security Kit
+type: module
+description: Enhance security of headless drupal website.
+package: graphQL
+core: 8.x
